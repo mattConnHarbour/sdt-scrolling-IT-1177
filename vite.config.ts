@@ -6,4 +6,7 @@ export default defineConfig({
   server: {
     host: '127.0.0.1',
   },
+  preview: {
+    host: '0.0.0.0',
+  },
 });
