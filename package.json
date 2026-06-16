@@ -6,11 +6,12 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "start": "vite preview --host --port ${PORT:-4173}"
+    "start": "serve dist -l ${PORT:-4173}"
   },
   "dependencies": {
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
+    "serve": "^14.2.6",
     "superdoc": "^1.39.0"
   },
   "devDependencies": {
