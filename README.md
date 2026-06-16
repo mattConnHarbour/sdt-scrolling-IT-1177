@@ -1,38 +1,31 @@
 # SDT Navigator
 
-List all content controls (SDTs) in a document and scroll to them.
+React demo showing how to list and scroll to content controls (SDTs) in a SuperDoc document.
 
-## Features
-
-- **List all SDTs**: Uses `editor.doc.contentControls.list()` to enumerate every content control in the document
-- **Scroll to SDT**: Uses `ui.contentControls.scrollIntoView()` to scroll to a specific SDT
-- **Focus SDT**: Uses `ui.contentControls.focus()` to scroll and place the caret inside an SDT
-- **Search**: Filter SDTs by alias, tag, or content text
-- **Metadata display**: Shows each SDT's alias, tag, type (block/inline), and lock mode
-- **Two-way sync**: Clicking an SDT in the document highlights the corresponding card in the sidebar
-
-## Key APIs demonstrated
+## Key APIs
 
 ```typescript
-// List all content controls
-const result = editor.doc.contentControls.list({});
-const sdts = result.items;
+import { createSuperDocUI } from 'superdoc/ui';
 
-// Scroll to an SDT (scroll only)
+const ui = createSuperDocUI({ superdoc });
+
+// List all SDTs
+const { items } = editor.doc.contentControls.list({});
+
+// Scroll only
 await ui.contentControls.scrollIntoView({ id: nodeId, block: 'center' });
 
-// Focus an SDT (scroll + place caret)
+// Scroll + place caret
 await ui.contentControls.focus({ id: nodeId, block: 'center' });
 ```
 
-## Running
+## Run
 
 ```bash
 pnpm install
 pnpm dev
 ```
 
-## Related
+## Docs
 
-- [Contract templates demo](../contract-templates/) - Full SDT authoring workflow
-- [Content controls docs](https://docs.superdoc.dev/document-api/features/content-controls)
+https://docs.superdoc.dev/editor/custom-ui/content-controls
